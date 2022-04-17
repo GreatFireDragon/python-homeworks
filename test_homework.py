@@ -38,7 +38,7 @@ for i in range(2):
 print(len(name), summa, proizv, end="\n", sep="\n")
 
 name = name.upper()
-print(name.upper(), name.lower(), name.capitalize(), name[0].lower() + name[1☺.upper() , sep="\n", end="\n")
+print(name.upper(), name.lower(), name.capitalize(), name[0].lower() + name[1:].upper() , sep="\n", end="\n")
 
 user_answer = input("Сколько будет 2+2*2? Ответ: ")
 if user_answer == "6":

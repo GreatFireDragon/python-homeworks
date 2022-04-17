@@ -1,1 +1,6 @@
-# Lesson6 homework
+# ...
+
+import argparse
+
+ans = "sdjgsdjklgjs"
+print(ans)
