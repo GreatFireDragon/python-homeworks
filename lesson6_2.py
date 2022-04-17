@@ -38,7 +38,6 @@ parser.add_argument('-f', '--file_s_name', default='default.ini', nargs='?', hel
 parser.add_argument('-p', '--path', default='Settings\\', help="Путь к файлу настроек")
 parser.add_argument('-s', '--save', default=1, help="Номер сохранения")
 args = parser.parse_args()
-print(f'Текущие параметры: {str(vars(args))[1:-1]}', end='\n')
 
 config_path = args.path + args.file_s_name
 save_number = args.save
@@ -50,12 +49,17 @@ save_number = args.save
 
 ans = "\nStart of programm...\n--------------------------------------"
 print(ans)
+print(f'Текущие параметры: {str(vars(args))[1:-1]}')
+
 if os.path.exists(config_path):
-    print("\nФайлы на месте.\n")
-    save1 = game_builder()
+    print("Файлы на месте.\n")
+    try:
+        save1 = game_builder()
+    except Exception:
+        print("Произошла непредвиденная ошибка")
+        exit(1)
 
     print(save1.__str__())
-
 else:
     print("\nПроверьте наличие папки Settings.\nОна должна находиться в корне и содержать файл default.ini"
           " и settings.ini\n"
